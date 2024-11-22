@@ -1,0 +1,35 @@
+<div *ngIf="islogged">
+  <h1>{{username}}</h1>
+</div>
+
+<div *ngFor="let item of items">
+  {{item}}
+</div>
+
+<!-- attribute directives -->
+<div [ngClass]="{'active': isactive}">
+  <p [ngStyle]="{'color': color}">
+    hello
+  </p>
+</div>
+
+
+
+<!-- custom directive -->
+<p appCustomdirective>
+  This is custom directive example in which the text color change to green
+</p>
+
+<!-- pipes example -->
+<h1>{{username | uppercase}}</h1>
+<h2>{{username | lowercase}}</h2>
+<h3>{{ price | currency:'INR' }}</h3>
+<h4>{{percentvalue | percent}}</h4>
+<h2>{{str | titlecase}}</h2>
+<h3>{{ str | slice:0:20 }}</h3>
+<h2>{{ currentdate | date}}</h2>
+
+
+<p>
+  {{str| custpipe}}
+</p>
