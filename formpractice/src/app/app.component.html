@@ -1,0 +1,48 @@
+<!-- Reactive forms -->
+
+<!-- <div>
+  <h2>Reactive Froms</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">username</label>
+      <input type="text" name="username" id="" formControlName="username">
+    </div>
+    <div>
+      <label for="email">email</label>
+      <input type="email" name="email" id="" formControlName="email">
+    </div>
+    <div>
+      <label for="pass">Password</label>
+      <input type="Password" name="Password" id="" formControlName="Password">
+    </div>
+    <button type="submit" [disabled]="registerForm.invalid">Submit</button>
+  </form>
+  <h2 *ngIf="submitted">username : {{ registerForm.get('username')?.value }}</h2>
+  <h2 *ngIf="submitted">email : {{ registerForm.get('email')?.value }}</h2>
+  <h2 *ngIf="submitted">Password : {{ registerForm.get('Password')?.value }}</h2>
+</div> -->
+
+<div>
+  <h1>Template-Driven Form</h1>
+
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="registerForm.username" required />
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="registerForm.email" required />
+    </div>
+
+
+    <button type="submit" [disabled]="registerForm.invalid">Submit</button>
+  </form>
+
+  <div *ngIf="submitted">
+    <h2>Submitted Data:</h2>
+    <p>Username: {{ registerForm.username }}</p>
+    <p>Email: {{ registerForm.email }}</p>
+  </div>
+</div>
