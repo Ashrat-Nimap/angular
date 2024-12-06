@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BrowserModule,
     AppRoutingModule,
     MatInputModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(),

@@ -1,44 +1,23 @@
-<div>
-    <form action="" style="display: flex; flex-direction: column;">
+<div style="width: 400px; margin: auto; display: flex;">
+    <form action="" style="display: flex; flex-direction: column; width: 100%; justify-content: center; align-items: center;" [formGroup] = "form" (ngSubmit)="onSubmit()">
         <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input type="email" matInput required
-                   placeholder="Ex. pat@example.com">
-            <!-- <mat-hint>Errors appear instantly!</mat-hint>
-            @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
-              <mat-error>Please enter a valid email address</mat-error>
-            }
-            @if (emailFormControl.hasError('required')) {
-              <mat-error>Email is <strong>required</strong></mat-error>
-            } -->
+            <mat-label>First Name</mat-label>
+            <input type="fname" matInput required
+                   placeholder="Ex. pat@example.com" formControlName="firstName">
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
             <input type="email" matInput required
-                   placeholder="Ex. pat@example.com">
-            <!-- <mat-hint>Errors appear instantly!</mat-hint>
-            @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
-              <mat-error>Please enter a valid email address</mat-error>
-            }
-            @if (emailFormControl.hasError('required')) {
-              <mat-error>Email is <strong>required</strong></mat-error>
-            } -->
+                   placeholder="" formControlName="email">
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
-            <input type="email" matInput required
-                   placeholder="Ex. pat@example.com">
-            <!-- <mat-hint>Errors appear instantly!</mat-hint>
-            @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
-              <mat-error>Please enter a valid email address</mat-error>
-            }
-            @if (emailFormControl.hasError('required')) {
-              <mat-error>Email is <strong>required</strong></mat-error>
-            } -->
+            <input type="password" matInput required
+                   placeholder="" formControlName="password">
           </mat-form-field>
+          <button type ="submit" [disabled] = "form.invalid">submit</button>
 
-          <mat-slide-toggle>Toggle me!</mat-slide-toggle>
     </form>
 </div>
