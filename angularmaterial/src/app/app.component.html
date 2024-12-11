@@ -1,4 +1,24 @@
-<div style="width: 400px; margin: auto; display: flex;">
+ <!-- <mat-sidenav-container style="height: 100vh;">
+        <mat-sidenav mode="side" align="start" opened="false" #sidenav style="width: 300px;">
+            <ul>
+              <li>home</li>
+              <li>Contact</li>
+              <li>about us</li>
+            </ul>
+        </mat-sidenav>
+         <mat-sidenav-content>
+          <mat-toolbar color="primary">
+              <button mat-icon-button (click)="sidenav.toggle()"></button>
+              <span>Myapp</span>
+          </mat-toolbar>
+          <router-outlet></router-outlet>
+         </mat-sidenav-content>
+        
+    </mat-sidenav-container> -->
+
+
+<!-- <div style="width: 400px; margin: auto; display: flex;">
+   
     <form action="" style="display: flex; flex-direction: column; width: 100%; justify-content: center; align-items: center;" [formGroup] = "form" (ngSubmit)="onSubmit()">
         <mat-form-field class="example-full-width">
             <mat-label>First Name</mat-label>
@@ -20,4 +40,6 @@
           <button type ="submit" [disabled] = "form.invalid">submit</button>
 
     </form>
-</div>
+
+</div> -->
+<app-user-data-table></app-user-data-table>

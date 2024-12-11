@@ -1,0 +1,44 @@
+<div >
+    <!-- Search Input -->
+    <mat-form-field appearance="outline" style="margin-top: 12px; width: 50%;">
+      <mat-label>Search</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search">
+    </mat-form-field>
+</div>
+
+<div style="width: 50%;">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- <ng-container matColoumnDef = "No">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+       <td mat-cell *matCellDef="let element"> {{element.No}} </td>
+    </ng-container> -->
+
+    <ng-container matColumnDef = "firstname">
+        <th mat-header-cell *matHeaderCellDef> FirstName </th>
+       <td mat-cell *matCellDef="let row"> {{row.firstname}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef = "lastname">
+        <th mat-header-cell *matHeaderCellDef> lastname </th>
+       <td mat-cell *matCellDef="let row"> {{row.lastname}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef = "age">
+        <th mat-header-cell *matHeaderCellDef> age </th>
+       <td mat-cell *matCellDef="let row"> {{row.age}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef = "email">
+        <th mat-header-cell *matHeaderCellDef> email </th>
+       <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [length]="dataSource.data.length"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>
+</div>
