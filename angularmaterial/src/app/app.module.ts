@@ -12,11 +12,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { UserDataTableComponent } from './user-data-table/user-data-table.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MycardComponent } from './mycard/mycard.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserDataTableComponent
+    UserDataTableComponent,
+    MycardComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSidenavModule,
     MatToolbarModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCardModule,
+    MatButtonModule,
+    MatTooltipModule
   ],
   providers: [
     provideClientHydration(),
