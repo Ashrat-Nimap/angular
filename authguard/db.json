@@ -11,6 +11,18 @@
       "email": "ashrat@gmail.com",
       "password": "1234567",
       "id": 2
+    },
+    {
+      "name": "prerna",
+      "email": "prerna@gmail.com",
+      "password": "12345678",
+      "id": 3
+    },
+    {
+      "name": "aman",
+      "email": "aman@gmail.com",
+      "password": "00000000",
+      "id": 4
     }
   ]
 }

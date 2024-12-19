@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="p-3">
+    <h5>Login Form</h5>
+    <form [formGroup]="loginfrom" (ngSubmit)="onlogin()">
+        <div class="form-group-input d-flex flex-column  g-3 w-50 align-content-center" >
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" id="email" class="form-control" placeholder="Enter email">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" id="password" class="form-control" placeholder="Enter password">
+            </mat-form-field>     
+        </div>
+        <div class="">
+            <button mat-flat-button type="submit">Login</button>
+        </div>
+    </form>
+</div>

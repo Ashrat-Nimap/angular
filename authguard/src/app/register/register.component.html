@@ -1,20 +1,26 @@
-<div>
+<div class="p-3">
+    <h5>Register Form</h5>
     <form [formGroup]="register" (ngSubmit)="onSubmit()">
         <div class="form-group-input">
-            <label for="name">Name</label>
-            <input type="text" id="name" formControlName="name">
+            <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" id="name" formControlName="name" placeholder="name">
+            </mat-form-field>
         </div>
         <div class="form-group-input">
-            <label for="email">Email</label>
-            <input type="email" id="email" formControlName="email">
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" id="email" class="form-control" placeholder="Enter email">
+            </mat-form-field>
         </div>
         <div class="form-group-input">
-            <label for="password">Password</label>
-            <input type="password" id="password" formControlName="password">
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" id="password" formControlName="password" placeholder="enter password">
+            </mat-form-field>
         </div>
         <div class="form-group-button">
-            <button type="submit" [disabled]="">Submit</button>
+            <button type="submit" mat-flat-button [disabled]="">Submit</button>
         </div>
-
     </form>
 </div>
