@@ -29,7 +29,6 @@ export class LoginComponent {
        else{
          alert('invalid credentials');
        }
-
     })
   }
 
