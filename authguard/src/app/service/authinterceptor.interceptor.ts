@@ -1,12 +1,15 @@
 import { HttpInterceptorFn } from '@angular/common/http';
+import { inject } from '@angular/core';
+import { UserserviceService } from './userservice.service';
 
 export const authinterceptorInterceptor: HttpInterceptorFn = (req, next) => {
   
-  const user = localStorage.getItem('referraltoken');
-  if (user) {
+  const token = localStorage.getItem('authtoken');
+  console.log(token);
+  if (token) {
     req = req.clone({
       setHeaders: {
-        Authorization: `Bearer ${user}`
+        Authorization: `Bearer ${token}`
       }
     })
     console.log('Modified Request:', req);

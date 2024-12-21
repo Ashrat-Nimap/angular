@@ -19,7 +19,8 @@ export class UserserviceService {
     return this.http.get<any[]>(`${this.url}?email=${email}&password=${password}`).pipe(
         map(users =>{
           if(users.length > 0){
-            localStorage.setItem('user',JSON.stringify(users));
+            const authtoken = "fake-jwt-token";
+            localStorage.setItem('authtoken', authtoken);
             return true;
           }
           return false;
@@ -29,10 +30,10 @@ export class UserserviceService {
   }
   
   islogin(){
-    return localStorage.getItem('user') !== null;
+    return localStorage.getItem('authtoken') !== null;
   }
   logout(){
-    localStorage.removeItem('user');
+    // localStorage.removeItem('authtoken');
     this.router.navigate(['/login']);
   }
 
