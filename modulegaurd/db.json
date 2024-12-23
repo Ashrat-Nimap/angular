@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "Username": "Ashrat",
+      "email": "Ashrat@gmail.com",
+      "password": "12345678",
+      "roleselection": "supervisor",
+      "id": 1
+    },
+    {
+      "Username": "prerna",
+      "email": "prerna@gmail.com",
+      "password": "12345678",
+      "roleselection": "Admin",
+      "id": 2
+    }
+  ]
+}

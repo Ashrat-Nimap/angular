@@ -1,1 +1,22 @@
-<p>register works!</p>
+<div style="width: 50%; padding: 1rem;">
+    <form [formGroup]="registerform" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="exampleInputusername" class="form-label">Username</label>
+            <input type="text" class="form-control" id="exampleInputusername" aria-describedby="emailHelp" formControlName="Username">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+        </div>
+        <select class="form-select" aria-label="Default select example" formControlName="roleselection">
+            <option selected>Select Your Role</option>
+            <option value="supervisor">supervisor</option>
+            <option value="Admin">Admin</option>
+          </select>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
