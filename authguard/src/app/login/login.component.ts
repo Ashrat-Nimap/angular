@@ -24,6 +24,8 @@ export class LoginComponent {
     const { email,password } = this.loginfrom.value;
     this.userservice.getuser(email,password).subscribe((response) => {
        if(response){
+        const token = localStorage.getItem('token');
+        console.log('Token after login:', token);
         this.router.navigate(['/home']);
        }
        else{

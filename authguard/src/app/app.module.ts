@@ -13,6 +13,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatButtonModule} from '@angular/material/button';
 import { authinterceptorInterceptor } from './service/authinterceptor.interceptor';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { authinterceptorInterceptor } from './service/authinterceptor.intercepto
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    CategoryComponent,
     
   ],
   imports: [

@@ -20,7 +20,7 @@ export class UserserviceService {
         map(users =>{
           if(users.length > 0){
             const authtoken = "fake-jwt-token";
-            localStorage.setItem('authtoken', authtoken);
+            localStorage.setItem('token', authtoken);
             return true;
           }
           return false;
@@ -30,10 +30,10 @@ export class UserserviceService {
   }
   
   islogin(){
-    return localStorage.getItem('authtoken') !== null;
+    return localStorage.getItem('token') !== null;
   }
   logout(){
-    // localStorage.removeItem('authtoken');
+    localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }
 
