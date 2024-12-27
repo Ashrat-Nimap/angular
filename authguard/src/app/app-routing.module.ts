@@ -7,7 +7,7 @@ import { authGuard } from './auth/auth.guard';
 import { CategoryComponent } from './category/category.component';
 
 const routes: Routes = [
-  {path:'home', component:HomeComponent, canActivate:[authGuard]},
+  {path:'home', component:HomeComponent, loadChildren : ()=> import('./home/home.module').then(m => m.HomeModule),  canActivate:[authGuard]},
   {path: 'login',component:LoginComponent},
   {path:'register', component:RegisterComponent},
   {path : 'category',component : CategoryComponent},

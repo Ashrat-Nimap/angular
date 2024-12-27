@@ -29,9 +29,8 @@ export class LoginComponent {
         this.router.navigate(['/home']);
        }
        else{
-         alert('invalid credentials');
+          alert('invalid credentials');
        }
     })
   }
-
 }
