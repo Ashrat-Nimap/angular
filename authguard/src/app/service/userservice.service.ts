@@ -2,40 +2,47 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, map, Observable, of } from 'rxjs';
-import { json } from 'stream/consumers';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserserviceService {
   private url = "http://localhost:3000/users";
-  constructor(private http:HttpClient,private router : Router) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  registeruser(userdata : any) : Observable<any>{
-    return this.http.post(this.url,userdata);
+  registeruser(userdata: any): Observable<any> {
+    return this.http.post(this.url, userdata);
   }
 
-  getuser(email:string,password : string) : Observable<boolean>{
+  getuser(email: string, password: string): Observable<boolean> {
     return this.http.get<any[]>(`${this.url}?email=${email}&password=${password}`).pipe(
-        map(users =>{
-          if(users.length > 0){
-            const authtoken = "fake-jwt-token";
-            localStorage.setItem('token', authtoken);
-            return true;
-          }
-          return false;
-        }),
-        catchError(()=>of(false))
+      map(users => {
+        if (users.length > 0) {
+          this.settoken();
+          return true;
+        }
+        return false;
+      }),
+      catchError(() => of(false))
     )
   }
-  
-  islogin(){
+
+  islogin() {
     return localStorage.getItem('token') !== null;
   }
-  logout(){
+  logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }
 
+  settoken(){
+    const authtoken = "fake-jwt-token";
+    return localStorage.setItem('token', authtoken);
+
+  }
+  gettoken() {
+    return localStorage.getItem('token');
+  }
+
 }
- 

@@ -1,1 +1,17 @@
-<p>customer-list-parent works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cust of customer">
+            <td>{{cust.name}}</td>
+            <td>{{cust.age}}</td>
+            <td>{{cust.email}}</td>
+            <td><button>Edit</button></td>
+        </tr>
+    </tbody>
+</table>

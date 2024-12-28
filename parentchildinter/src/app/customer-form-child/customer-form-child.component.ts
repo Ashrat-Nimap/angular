@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-customer-form-child',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './customer-form-child.component.css'
 })
 export class CustomerFormChildComponent {
+
+  @Input() getvalue : string = "";
 
 }
