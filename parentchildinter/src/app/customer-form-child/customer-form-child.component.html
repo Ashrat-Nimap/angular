@@ -1,1 +1,12 @@
-<p>{{getvalue}}</p>
+<div>
+    <form action="" [formGroup]="customerform" (ngSubmit)="submit()">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" formControlName="name"  required><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" formControlName="email" required><br>
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" formControlName="age" required><br>
+
+        <button type="submit">save changes</button>
+    </form>
+</div>

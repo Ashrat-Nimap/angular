@@ -16,17 +16,32 @@ export class UserserviceService {
   }
 
   getuser(email: string, password: string): Observable<boolean> {
-    return this.http.get<any[]>(`${this.url}?email=${email}&password=${password}`).pipe(
-      map(users => {
-        if (users.length > 0) {
-          this.settoken();
-          return true;
-        }
-        return false;
-      }),
-      catchError(() => of(false))
-    )
+    debugger
+    return this.http
+      .get<any[]>(this.url, {
+        params: { email, password }, // Filter on the server
+      })
+      .pipe(
+        map((users) => {
+          // Check if the user exists
+          const user = users.find(
+            (user) => user.email === email && user.password === password
+          );
+  
+          if (user) {
+            console.log('Email:', email);
+            console.log('Password:', password);
+            return true;
+          }
+          return false;
+        }),
+        catchError((error) => {
+          console.error('Error fetching users:', error);
+          return of(false);
+        })
+      );
   }
+  
 
   islogin() {
     return localStorage.getItem('token') !== null;
@@ -36,13 +51,15 @@ export class UserserviceService {
     this.router.navigate(['/login']);
   }
 
-  settoken(){
+  settoken() : void {
+    
     const authtoken = "fake-jwt-token";
-    return localStorage.setItem('token', authtoken);
-
+    localStorage.setItem('token', authtoken);
   }
-  gettoken() {
+  gettoken(): string | null {
     return localStorage.getItem('token');
   }
-
+  // getusername(name: string) {
+  //   return this.http.get<any>(`${this.url}?name=${name}`).pipe(map(users => users[0]));
+  // }
 }

@@ -3,7 +3,6 @@ import { inject } from '@angular/core';
 import { UserserviceService } from './userservice.service';
 
 export const authinterceptorInterceptor: HttpInterceptorFn = (req, next) => {
-
   const token = inject(UserserviceService).gettoken();
   console.log(token);
   if (token) {

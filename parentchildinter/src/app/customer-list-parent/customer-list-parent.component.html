@@ -13,8 +13,9 @@
             <td>{{cust.name}}</td>
             <td>{{cust.age}}</td>
             <td>{{cust.email}}</td>
-            <td><button>Edit</button></td>
+            <td><button (click)="editCustomer(cust)">Edit</button></td>
         </tr>
     </tbody>
 </table>
+<app-customer-form-child *ngIf="selectedCustomer" [customer]="selectedCustomer" (update)="handleedit($event)"></app-customer-form-child>
 </div>

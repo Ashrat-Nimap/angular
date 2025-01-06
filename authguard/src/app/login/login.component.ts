@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup ,FormControl} from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { UserserviceService } from '../service/userservice.service';
 import { Router } from '@angular/router';
 
@@ -9,28 +9,32 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-      
-  constructor(private userservice : UserserviceService,private router : Router){}
+
+  constructor(private userservice: UserserviceService, private router: Router) { }
   loginfrom = new FormGroup({
-    email : new FormControl(),
-    password : new FormControl(),
+    email: new FormControl(),
+    password: new FormControl(),
   })
 
-  onlogin(){
-    if(this.loginfrom.invalid){
+  onlogin() {
+    if (this.loginfrom.invalid) {
       return
     }
 
-    const { email,password } = this.loginfrom.value;
-    this.userservice.getuser(email,password).subscribe((response) => {
-       if(response){
-        const token = localStorage.getItem('token');
-        console.log('Token after login:', token);
-        this.router.navigate(['/home']);
-       }
-       else{
+    const { email, password } = this.loginfrom.value;
+    this.userservice.getuser(email, password).subscribe({
+      next: (response) => {
+        if (response) {
+          const token = this.userservice.gettoken();
+          console.log('Token after login:', token);
+          this.router.navigate(['/home']);
+        }
+        else {
           alert('invalid credentials');
-       }
+        }
+      }
     })
   }
+
+
 }
