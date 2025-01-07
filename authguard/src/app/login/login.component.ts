@@ -25,8 +25,7 @@ export class LoginComponent {
     this.userservice.getuser(email, password).subscribe({
       next: (response) => {
         if (response) {
-          const token = this.userservice.gettoken();
-          console.log('Token after login:', token);
+          this.userservice.settoken();
           this.router.navigate(['/home']);
         }
         else {

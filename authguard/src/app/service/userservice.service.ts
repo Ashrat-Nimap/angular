@@ -9,6 +9,7 @@ import { catchError, map, Observable, of } from 'rxjs';
 })
 export class UserserviceService {
   private url = "http://localhost:3000/users";
+  private url2 = "http://localhost:3000/login";
   constructor(private http: HttpClient, private router: Router) { }
 
   registeruser(userdata: any): Observable<any> {
@@ -16,21 +17,21 @@ export class UserserviceService {
   }
 
   getuser(email: string, password: string): Observable<boolean> {
-    debugger
     return this.http
-      .get<any[]>(this.url, {
+      .get<any>(this.url, {
         params: { email, password }, // Filter on the server
       })
       .pipe(
         map((users) => {
           // Check if the user exists
           const user = users.find(
-            (user) => user.email === email && user.password === password
-          );
-  
+            (user: { email: string; password: string; }) => user.email === email && user.password === password
+          );  
           if (user) {
+            this.settoken();
             console.log('Email:', email);
             console.log('Password:', password);
+            debugger
             return true;
           }
           return false;
@@ -52,7 +53,6 @@ export class UserserviceService {
   }
 
   settoken() : void {
-    
     const authtoken = "fake-jwt-token";
     localStorage.setItem('token', authtoken);
   }
