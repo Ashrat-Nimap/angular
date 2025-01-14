@@ -22,10 +22,9 @@ export class LoginComponent {
     }
 
     const { email, password } = this.loginfrom.value;
-    this.userservice.getuser(email, password).subscribe({
+    this.userservice.getUser(email, password).subscribe({
       next: (response) => {
         if (response) {
-          this.userservice.settoken();
           this.router.navigate(['/home']);
         }
         else {

@@ -4,24 +4,28 @@
       "name": "ashrat",
       "email": "ashrat@gmail.com",
       "password": "1234567",
+      "token" : "guari-10",
       "id": 1
     },
     {
       "name": "ashrat",
       "email": "ashrat@gmail.com",
       "password": "1234567",
+      "token" : "guari-10-00",
       "id": 2
     },
     {
       "name": "prerna",
       "email": "prerna@gmail.com",
       "password": "12345678",
+      "token" : "guari-10-09",
       "id": 3
     },
     {
       "name": "aman",
       "email": "aman@gmail.com",
       "password": "00000000",
+      "token" : "guari-10-08",
       "id": 4
     }
   ],
