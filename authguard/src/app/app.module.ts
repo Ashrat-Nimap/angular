@@ -14,13 +14,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {MatButtonModule} from '@angular/material/button';
 import { authinterceptorInterceptor } from './service/authinterceptor.interceptor';
 import { CategoryComponent } from './category/category.component';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
     CategoryComponent,
     
   ],
@@ -30,7 +30,8 @@ import { CategoryComponent } from './category/category.component';
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    HomeModule
   ],
   providers: [
     provideClientHydration(),

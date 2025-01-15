@@ -25,7 +25,10 @@ export class LoginComponent {
     this.userservice.getUser(email, password).subscribe({
       next: (response) => {
         if (response) {
+          // localStorage.setItem('token',response.token);
+          this.userservice.token;
           this.router.navigate(['/home']);
+          console.log('hhuhh',response.token)
         }
         else {
           alert('invalid credentials');
