@@ -4,30 +4,59 @@
       "name": "ashrat",
       "email": "ashrat@gmail.com",
       "password": "1234567",
-      "token" : "guari-10",
+      "token": "guari-10",
       "id": 1
     },
     {
       "name": "ashrat",
       "email": "ashrat@gmail.com",
       "password": "1234567",
-      "token" : "guari-10-00",
+      "token": "guari-10-00",
       "id": 2
     },
     {
       "name": "prerna",
       "email": "prerna@gmail.com",
       "password": "12345678",
-      "token" : "guari-10-09",
+      "token": "guari-10-09",
       "id": 3
     },
     {
       "name": "aman",
       "email": "aman@gmail.com",
       "password": "00000000",
-      "token" : "guari-10-08",
+      "token": "guari-10-08",
       "id": 4
     }
   ],
-  "login":[]
+  "task": [
+    {
+      "name": "prerna",
+      "description": "joooooo",
+      "dueDate": "2025-01-09",
+      "id": 1
+    },
+    {
+      "name": "book read",
+      "description": "asdfgh",
+      "dueDate": "2025-01-09",
+      "id": 2
+    },
+    {
+      "name": "",
+      "description": [
+        null
+      ],
+      "dueDate": [
+        null
+      ],
+      "id": 3
+    },
+    {
+      "name": "create",
+      "description": "jooooo",
+      "dueDate": "2025-01-01",
+      "id": 4
+    }
+  ]
 }

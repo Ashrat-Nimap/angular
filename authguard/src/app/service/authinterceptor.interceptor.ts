@@ -4,18 +4,17 @@ import { UserserviceService } from './userservice.service';
 import { json } from 'stream/consumers';
 
 export const authinterceptorInterceptor: HttpInterceptorFn = (req, next) => {
-  const userservice = inject(UserserviceService);
-  const token = userservice.currentToken;
-  // const username = userservice.currentToken;
-  
-  // const username = userservice.currentusername;
+  const token = inject(UserserviceService).getToken();
    console.log(token);
-  //  console.log(username);
+   if (req.url.includes('/login')) {
+    console.log('Bypassing interceptor for login URL:', req.url);
+    return next(req); // Proceed without modifying the request
+  }
+ 
   if (token) {
     req = req.clone({
       setHeaders: {
         Authorization: `Bearer ${token}`,
-        // XUser: `${username}`,
       },
     }),
     console.log('Modified Request:', req);

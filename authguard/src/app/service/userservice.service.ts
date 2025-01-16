@@ -9,17 +9,10 @@ import { BehaviorSubject, catchError, map, Observable, of } from 'rxjs';
 })
 export class UserserviceService {
   private url = "http://localhost:3000/users";
-  // private url2 = "http://localhost:3000/login";
-  private tokenSubject = new BehaviorSubject<string | null>(localStorage.getItem('token'));
+  private url2 = "http://localhost:3000/task";
   constructor(private http: HttpClient, private router: Router) { }
-  get token() {
-    return this.tokenSubject.asObservable();
-  }
-
-   
-  get currentToken(): string | null {
-    return this.tokenSubject.value;
-  }
+ 
+  
   registeruser(userdata: any): Observable<any> {
     return this.http.post(this.url, userdata);
   }
@@ -35,17 +28,8 @@ export class UserserviceService {
             const user = users[0]; // Get the first matching user
             const token = user.token; // Extract the token
             const username = user.name;
-  
-            if (typeof token === 'string') {
-              localStorage.setItem('token', JSON.stringify({token,username})); // Store token as a string
-              // localStorage.setItem('username',username);
-              this.tokenSubject.next(token); // Update BehaviorSubject
-              // this.userSubject.next(username);
-              return user;
-            } else {
-              console.error('Token is not a string:', token);
-              return null;
-            }
+            localStorage.setItem('token', token); // Store token as a string
+            return user;
           }
           return null;
         }),
@@ -59,11 +43,18 @@ export class UserserviceService {
   islogin() {
     return localStorage.getItem('token') !== null;
   }
+
+  getToken(){
+   return localStorage.getItem('token');
+  }
   logout() {
     localStorage.removeItem('token');
-    // this.tokenSubject.next(null);
-    // this.userSubject.next(null);
     this.router.navigate(['/login']);
+  }
+
+
+  addtask(taskdata : any) : Observable<any>{
+    return this.http.post(this.url2,taskdata);
   }
 
 }
