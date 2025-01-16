@@ -29,6 +29,7 @@ export class UserserviceService {
             const token = user.token; // Extract the token
             const username = user.name;
             localStorage.setItem('token', token); // Store token as a string
+            localStorage.setItem('username',username);
             return user;
           }
           return null;
@@ -43,15 +44,18 @@ export class UserserviceService {
   islogin() {
     return localStorage.getItem('token') !== null;
   }
+  getUsername(){
+    return localStorage.getItem('username');
+  }
 
   getToken(){
    return localStorage.getItem('token');
   }
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
     this.router.navigate(['/login']);
   }
-
 
   addtask(taskdata : any) : Observable<any>{
     return this.http.post(this.url2,taskdata);

@@ -13,9 +13,9 @@ export class HomeComponent {
   constructor(private userservice : UserserviceService){}
 
   taskForm  = new FormGroup({
-      name : new FormControl([Validators.required]),
-      description : new FormControl([Validators.required]),
-      dueDate : new FormControl([Validators.required]),
+      name : new FormControl('',[Validators.required]),
+      description : new FormControl('',[Validators.required]),
+      dueDate : new FormControl('',[Validators.required]),
   })
 
   onlogout(){
