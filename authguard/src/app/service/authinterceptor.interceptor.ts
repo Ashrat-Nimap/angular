@@ -8,20 +8,20 @@ export const authinterceptorInterceptor: HttpInterceptorFn = (req, next) => {
   const token = userService.getToken();
   const username = userService.getUsername();
   
-   console.log(token);
-   if (req.url.includes('/login')) {
-    console.log('Bypassing interceptor for login URL:', req.url);
+
+  if (req.url === 'http://localhost:3000/users' && !req.params.has('login')) {
+    console.log('Bypassing interceptor for GET login request:', req.url);
     return next(req); // Proceed without modifying the request
   }
- 
+  console.log(token);
   if (token) {
     req = req.clone({
       setHeaders: {
         Authorization: `Bearer ${token}`,
-        Xuser : `${username}`
+        Xuser: `${username}`
       },
     }),
-    console.log('Modified Request:', req);
+      console.log('Modified Request:', req);
   }
   return next(req);
 

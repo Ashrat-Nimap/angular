@@ -9,7 +9,7 @@ import { FormControl, FormControlName, FormGroup, Validators } from '@angular/fo
 })
 export class HomeComponent {
 
-
+  userId! : number;
   constructor(private userservice : UserserviceService){}
 
   taskForm  = new FormGroup({

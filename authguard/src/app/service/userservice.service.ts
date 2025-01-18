@@ -58,7 +58,7 @@ export class UserserviceService {
   }
 
   addtask(taskdata : any) : Observable<any>{
-    return this.http.post(this.url2,taskdata);
+    return this.http.post(`${this.url2}`,taskdata);
   }
 
 }
