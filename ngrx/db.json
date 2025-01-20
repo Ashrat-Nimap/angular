@@ -1,3 +1,18 @@
 {
-    
+  "courses": [
+    {
+      "cname": "SQL ",
+      "cdescription": "Mastering the sql course 30 days",
+      "cduration": "30 Days",
+      "cprice": "2300",
+      "id": 1
+    },
+    {
+      "cname": "Python",
+      "cdescription": "Python course in 3 month",
+      "cduration": "3 Month",
+      "cprice": "2400",
+      "id": 2
+    }
+  ]
 }

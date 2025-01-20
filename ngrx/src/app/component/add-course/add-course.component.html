@@ -1,0 +1,29 @@
+<div class="container">
+    <div>
+        <h5>Add Course</h5>
+        <form action="" [formGroup]="addcourseform" (ngSubmit)="addtask()">
+            <div class="form-group-feild">
+                <label for="cname" class="form-label">Course Name</label>
+                <input type="text" class="form-control"  id="cname" formControlName="cname">
+            </div>
+            <div class="form-group-feild">
+                <label for="cdescription" class="form-label">Course Description</label>
+                <input type="text" class="form-control"  id="cdescription" formControlName="cdescription">
+            </div>
+            <div class="form-group-feild">
+                <label for="cduration" class="form-label">Course Duration</label>
+                <input type="text" class="form-control" id="cduration" formControlName="cduration">
+            </div>
+            <div class="form-group-feild">
+                <label for="cprice" class="form-label">Course Price</label>
+                <input type="text" class="form-control" id="cprice" formControlName="cprice">
+            </div>
+            <div class="form-group-button">
+                <button type="submit" class="btn btn-primary mt-2">Add</button>
+            </div>
+        </form>
+        <div class="view-course">
+            <a routerLink=""></a>
+        </div>
+    </div>
+</div>

@@ -10,8 +10,6 @@ import { decrement, increment, reset } from './store/reducer/action/couter.actio
 })
 export class AppComponent {
   title = 'ngrx';
-
-
   count$ : Observable<number>;
 
   constructor(private store : Store<{ count : number}>){
