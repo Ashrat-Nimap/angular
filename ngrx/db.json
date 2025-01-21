@@ -13,6 +13,27 @@
       "cduration": "3 Month",
       "cprice": "2400",
       "id": 2
+    },
+    {
+      "cname": "Java Master Class",
+      "cdescription": "Learn java in 6 Months",
+      "cduration": "6 Month",
+      "cprice": "24000",
+      "id": 3
+    },
+    {
+      "cname": "Angular",
+      "cdescription": "jdjdjjdjddj",
+      "cduration": "6 Month",
+      "cprice": "20000",
+      "id": 4
+    },
+    {
+      "cname": "Mobile development",
+      "cdescription": "mobile",
+      "cduration": "7 month",
+      "cprice": "10000",
+      "id": 5
     }
   ]
 }

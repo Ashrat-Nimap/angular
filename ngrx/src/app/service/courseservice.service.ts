@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { courses } from '../model/courses';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,11 @@ export class CourseserviceService {
 
   constructor(private http : HttpClient) { }
 
-  addCourses(coursedata : any) : Observable<any>{
-    return this.http.post(this.api,coursedata);
+  addCourses(coursedata : courses) : Observable<courses>{
+    return this.http.post<courses>(this.api,coursedata);
   }
 
-  getAllCourse() : Observable<any>{
-    return this.http.get(this.api);
+  getAllCourse() : Observable<courses[]>{
+    return this.http.get<courses[]>(this.api);
   }
 }

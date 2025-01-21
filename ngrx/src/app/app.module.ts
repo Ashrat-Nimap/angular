@@ -9,6 +9,8 @@ import { counterreducer } from './store/reducer/counter.reducer';
 import { AddCourseComponent } from './component/add-course/add-course.component';
 import{ FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import {coursereducer } from './store/reducer/course.reducer';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    StoreModule.forRoot({ count : counterreducer})
+    CommonModule,
+    StoreModule.forRoot({ courses : coursereducer})
   ],
   providers: [
     provideClientHydration(),

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CourseserviceService } from '../../service/courseservice.service';
+import { courses } from '../../model/courses';
+import { Store } from '@ngrx/store';
+import { addcourse } from '../../store/reducer/action/course.action';
 
 @Component({
   selector: 'app-add-course',
@@ -9,22 +12,22 @@ import { CourseserviceService } from '../../service/courseservice.service';
 })
 export class AddCourseComponent {
 
-  constructor(private courseService : CourseserviceService){}
+  constructor(private courseService : CourseserviceService,private store : Store){}
 
   addcourseform = new FormGroup({
     cname : new FormControl('',[Validators.required]),
     cdescription : new FormControl('',[Validators.required]),
     cduration  :new FormControl('',[Validators.required]),
-    cprice : new FormControl('',[Validators.required])
+    cprice : new FormControl(0,[Validators.required])
   })
 
 
   addtask(){
     if(this.addcourseform.valid){
-      this.courseService.addCourses(this.addcourseform.value).subscribe((res) =>{
-        console.log(res);
+      const newcourse = this.addcourseform.value as courses;
+      this.courseService.addCourses(newcourse).subscribe((course) =>{
+        this.store.dispatch(addcourse({course}));
         this.addcourseform.reset();
-
       }) 
     }
   }
