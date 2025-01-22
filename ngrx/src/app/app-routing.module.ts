@@ -13,8 +13,8 @@ const routes: Routes = [
     component : AddCourseComponent
   },
   {
-    path : " ",
-    redirectTo : '/addcourse'
+    path : "**",
+    component : AddCourseComponent,
   }
 ];
 
