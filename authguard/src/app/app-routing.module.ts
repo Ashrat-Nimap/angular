@@ -6,12 +6,12 @@ import { RegisterComponent } from './register/register.component';
 import { authGuard } from './auth/auth.guard';
 import { CategoryComponent } from './category/category.component';
 
-const routes: Routes = [
-  {path:'home', component:HomeComponent, loadChildren : ()=> import('./home/home.module').then(m => m.HomeModule),  canActivate:[authGuard]},
-  {path: 'login',component:LoginComponent},
-  {path:'register', component:RegisterComponent},
-  {path : 'category',component : CategoryComponent},
-  {path : '', redirectTo:'/login', pathMatch:'full'},
+export const routes: Routes = [
+  {path:'home', component:HomeComponent, loadChildren : ()=> import('./home/home.module').then(m => m.HomeModule),  canActivate:[authGuard],title : 'Home Page'},
+  {path: 'login',component:LoginComponent,title : 'Login Page'},
+  {path:'register', component:RegisterComponent,title : 'Register Page'},
+  {path : 'category',component : CategoryComponent,title : 'Category Page'},
+  {path : '', redirectTo:'/login', pathMatch:'full',},
 
 ];
 

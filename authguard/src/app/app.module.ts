@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -15,6 +15,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { authinterceptorInterceptor } from './service/authinterceptor.interceptor';
 import { CategoryComponent } from './category/category.component';
 import { HomeModule } from './home/home.module';
+import { provideRouter, ROUTES, TitleStrategy } from '@angular/router';
+import { titleconfig } from './title.config';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { HomeModule } from './home/home.module';
     provideClientHydration(),
     provideHttpClient(withFetch()),
     provideAnimationsAsync(),
-    provideHttpClient(withInterceptors([authinterceptorInterceptor]))
+    provideHttpClient(withInterceptors([authinterceptorInterceptor])),
+    provideRouter(routes),
+    {provide : TitleStrategy,useClass : titleconfig},
   ],
   bootstrap: [AppComponent]
 })
