@@ -23,7 +23,7 @@ const ELEMENT_DATA: userdetails[] = [
 @Component({
   selector: 'app-user-data-table',
   templateUrl: './user-data-table.component.html',
-  styleUrl: './user-data-table.component.css',
+  styleUrl: './user-data-table.component.scss',
   
 })
 export class UserDataTableComponent implements AfterViewInit{

@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'angularmaterial';
@@ -17,6 +17,16 @@ export class AppComponent {
 
   onSubmit() {
     console.log(this.form.value);  // Log form values to the console
+  }
+
+  isDarkTheme = signal(false);
+
+  toggleTheme() {
+    this.isDarkTheme.update((current) => !current);
+
+    // Toggle theme class on the `body` element
+    const themeClass = this.isDarkTheme() ? 'dark-theme' : 'light-theme';
+    document.body.className = themeClass;
   }
 
 
