@@ -3,12 +3,14 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CustomdirectiveDirective } from './customdirectives/customdirective.directive';
 import { CustpipePipe } from './custompipes/custpipe.pipe';
+import { HostlistenerDirective } from './customdirectives/hostlistener.directive';
+import { HostdirectiveDirective } from './customdirectives/hostdirective.directive';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,CustomdirectiveDirective,CustpipePipe],
+  imports: [RouterOutlet,CommonModule,CustomdirectiveDirective,CustpipePipe,HostlistenerDirective,HostdirectiveDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
