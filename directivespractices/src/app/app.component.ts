@@ -5,12 +5,14 @@ import { CustomdirectiveDirective } from './customdirectives/customdirective.dir
 import { CustpipePipe } from './custompipes/custpipe.pipe';
 import { HostlistenerDirective } from './customdirectives/hostlistener.directive';
 import { HostdirectiveDirective } from './customdirectives/hostdirective.directive';
+import {FormsModule} from '@angular/forms'
+import { SearchpipePipe } from './custompipes/searchpipe.pipe';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,CustomdirectiveDirective,CustpipePipe,HostlistenerDirective,HostdirectiveDirective],
+  imports: [RouterOutlet,CommonModule,CustomdirectiveDirective,CustpipePipe,HostlistenerDirective,HostdirectiveDirective,FormsModule,SearchpipePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -26,5 +28,15 @@ export class AppComponent {
     percentvalue : number = 0.34;
 
     str : string = "ashrat is passionate about coding";
+
+    searchquery : string = "";
+
+    user = [
+      { name: 'Alice', role: 'Admin' },
+      { name: 'Bob', role: 'User' },
+      { name: 'Charlie', role: 'Admin' },
+      { name: 'David', role: 'User' },
+      { name: 'Eve', role: 'Guest' }
+    ]
     
 }

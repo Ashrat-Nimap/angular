@@ -36,3 +36,12 @@
 
 <p appHostlistener>Hover me for Hostlistener</p>
 <p appHostdirective>Hover me for Hostdirective</p>
+
+
+<input type="text" name="" id="" [(ngModel)]="searchquery">
+
+<ul>
+  <li *ngFor="let item of user | searchpipe:searchquery:'name'">
+    {{item.name}} -- {{item.role}}
+  </li>
+</ul>
