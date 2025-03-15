@@ -30,7 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
     StoreModule.forRoot({ courses : coursereducer}),
     ToastrModule.forRoot({
       timeOut : 3000,
-      positionClass : 'toast'
+      positionClass : 'toast-top-right'
     })
   ],
   providers: [
