@@ -28,6 +28,10 @@ export class AppComponent {
     const themeClass = this.isDarkTheme() ? 'dark-theme' : 'light-theme';
     document.body.className = themeClass;
   }
+  applyTheme(theme: 'dark' | 'light') {
+    document.body.classList.toggle('dark-theme', theme === 'dark');
+  }
+  
 
 
 
