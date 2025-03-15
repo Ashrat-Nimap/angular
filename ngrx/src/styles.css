@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+/* Global Toast Style */
+.toast-top-right {
+    margin-top: 60px;
+    /* Prevent overlapping with navbar */
+}
+
+.ngx-toastr {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.toast-success {
+    background-color: #28a745 !important;
+}
+
+.toast-error {
+    background-color: #dc3545 !important;
+}
+
+.toast-warning {
+    background-color: #ffc107 !important;
+}
+
+.toast-info {
+    background-color: #17a2b8 !important;
+}

@@ -4,6 +4,7 @@ import { CourseserviceService } from '../../service/courseservice.service';
 import { courses } from '../../model/courses';
 import { Store } from '@ngrx/store';
 import { addcourse } from '../../store/reducer/action/course.action';
+import { TosterServiceService } from '../../service/toster-service.service';
 
 @Component({
   selector: 'app-add-course',
@@ -12,7 +13,7 @@ import { addcourse } from '../../store/reducer/action/course.action';
 })
 export class AddCourseComponent {
 
-  constructor(private courseService : CourseserviceService,private store : Store){}
+  constructor(private courseService : CourseserviceService,private store : Store,private toast : TosterServiceService){}
 
   addcourseform = new FormGroup({
     cname : new FormControl('',[Validators.required]),
@@ -27,6 +28,7 @@ export class AddCourseComponent {
       const newcourse = this.addcourseform.value as courses;
       this.courseService.addCourses(newcourse).subscribe((course) =>{
         this.store.dispatch(addcourse({course}));
+        this.toast.showSuccess('Added Successfully');
         this.addcourseform.reset();
       }) 
     }

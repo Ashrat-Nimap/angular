@@ -41,6 +41,48 @@
       "cduration": "1 month",
       "cprice": "1000",
       "id": 6
+    },
+    {
+      "cname": "Python",
+      "cdescription": "Master the sql course in 30days",
+      "cduration": "3 hours",
+      "cprice": "2000",
+      "id": 7
+    },
+    {
+      "cname": "Python",
+      "cdescription": "jdjdjjdjddj",
+      "cduration": "1 month",
+      "cprice": "2000",
+      "id": 8
+    },
+    {
+      "cname": "jaskka  as zj jasm c",
+      "cdescription": "dnkws ",
+      "cduration": "ks ",
+      "cprice": "11",
+      "id": 9
+    },
+    {
+      "cname": "ws, ,",
+      "cdescription": "snkj",
+      "cduration": "snslnl",
+      "cprice": "200",
+      "id": 10
+    },
+    {
+      "cname": "nednk ",
+      "cdescription": "d kx ",
+      "cduration": "s x",
+      "cprice": "slz c",
+      "id": 11
+    },
+    {
+      "cname": "kjwbak",
+      "cdescription": "k x",
+      "cduration": "dks x",
+      "cprice": "1200",
+      "id": 12
     }
   ]
 }

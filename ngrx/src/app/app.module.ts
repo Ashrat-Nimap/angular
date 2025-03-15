@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import{ FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import {coursereducer } from './store/reducer/course.reducer';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,12 @@ import {coursereducer } from './store/reducer/course.reducer';
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
-    StoreModule.forRoot({ courses : coursereducer})
+    BrowserAnimationsModule,
+    StoreModule.forRoot({ courses : coursereducer}),
+    ToastrModule.forRoot({
+      timeOut : 3000,
+      positionClass : 'toast'
+    })
   ],
   providers: [
     provideClientHydration(),
