@@ -83,6 +83,34 @@
       "cduration": "dks x",
       "cprice": "1200",
       "id": 12
+    },
+    {
+      "cname": "qaqkw",
+      "cdescription": "kjb",
+      "cduration": "1 month",
+      "cprice": "10000",
+      "id": 13
+    },
+    {
+      "cname": "as",
+      "cdescription": "asas",
+      "cduration": "6 Month",
+      "cprice": "11111",
+      "id": 14
+    },
+    {
+      "cname": "nm",
+      "cdescription": "alk",
+      "cduration": "1 month",
+      "cprice": "900",
+      "id": 15
+    },
+    {
+      "cname": "SQL",
+      "cdescription": "Master the sql course in 30days",
+      "cduration": "1 month",
+      "cprice": "6000",
+      "id": 16
     }
   ]
 }

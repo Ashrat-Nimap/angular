@@ -1,9 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 /* Global Toast Style */
-.toast-top-right {
-    margin-top: 60px;
-    /* Prevent overlapping with navbar */
-}
 
 .ngx-toastr {
     font-size: 16px;
@@ -24,4 +20,20 @@
 
 .toast-info {
     background-color: #17a2b8 !important;
+}
+body.light {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+body.dark {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.theme-toggle {
+    margin: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
 }

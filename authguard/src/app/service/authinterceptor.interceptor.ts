@@ -1,7 +1,9 @@
-import { HttpInterceptorFn } from '@angular/common/http';
+import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { UserserviceService } from './userservice.service';
 import { json } from 'stream/consumers';
+import { catchError, tap, throwError } from 'rxjs';
+import { error } from 'console';
 
 export const authinterceptorInterceptor: HttpInterceptorFn = (req, next) => {
   const userService = inject(UserserviceService);
@@ -23,6 +25,17 @@ export const authinterceptorInterceptor: HttpInterceptorFn = (req, next) => {
     }),
       console.log('Modified Request:', req);
   }
-  return next(req);
+  return next(req).pipe(
+    catchError((error : HttpErrorResponse)=>{
+      let errorMessage = "Something went wrong";
+      if(error.error instanceof HttpErrorResponse){
+        errorMessage = `${error.error.message}`
+      }else {
+        errorMessage = `${error.status} - ${error.message}`;
+      }
+      console.error(errorMessage);
+      return throwError(errorMessage)
+    })
+  );
 
 }
